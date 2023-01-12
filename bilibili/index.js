@@ -3,13 +3,14 @@
  * @Date: 2023-01-12
  * @LastEditors: anjiang
  * @LastEditTime: 2023-01-12
- * @Description:
+ * @Description:使用库下载bilibili
  */
 const { download } = require("bilibili-save-nodejs");
 
+// 下载up主所有视频
 download({
 	downloadRange: "byAuthor",
-	downloadType: "mp4",
+	downloadType: "mp3",
 	downloadPath: "https://space.bilibili.com/313580179",
 })
 	.then(() => console.log("下载成功"))
