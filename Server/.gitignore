@@ -5,3 +5,4 @@ yarn.lock
 .history
 /data
 /public/avatar
+/video
