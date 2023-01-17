@@ -1,0 +1,30 @@
+<!--
+ * @Author: anjiang
+ * @Date: 2023-01-16
+ * @LastEditors: anjiang
+ * @LastEditTime: 2023-01-17
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <a href="https://localhost:9529/1.mp4" download="">下载</a> -->
+		<script>
+			function downloadFn(url, name) {
+				let link = document.createElement("a");
+				link.style.display = "none";
+				link.href = url;
+				link.setAttribute("download", name);
+				document.body.appendChild(link);
+				link.click();
+			}
+			downloadFn("http://localhost:9529/1.mp4", "1.mp4");
+		</script>
+	</body>
+</html>

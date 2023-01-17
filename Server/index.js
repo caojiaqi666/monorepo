@@ -37,7 +37,8 @@ app.use(async (ctx, next) => {
 app
 	.use(session(CONFIG, app))
 	// 加载静态资源模块
-	.use(koaStatic(resolve(__dirname, "public")));
+	// .use(koaStatic(resolve(__dirname, "public")));
+	.use(koaStatic(__dirname + "/"));
 // 加载post请求数据解析模块
 app
 	.use(

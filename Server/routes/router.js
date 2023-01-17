@@ -93,4 +93,8 @@ r.post("/searchUser", userPost.searchUser);
 // 下载bilibili视频
 r.post("/downloadBi", downloadPost.download);
 
+r.get("/1.mp4", (ctx) => {
+  ctx.body = ctx;  
+})
+
 module.exports = r;
