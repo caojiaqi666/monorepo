@@ -7,8 +7,8 @@
  */
 import axios from "axios";
 // 通过链接下载视频
-// const serveUrl = "http://114.115.181.249:9529";
-const serveUrl = "http://localhost:9529";
+const serveUrl = "http://114.115.181.249:9529";
+// const serveUrl = "http://localhost:9529";
 export const downloadByUrl = (data) => {
 	return axios({
 		method: "post",
