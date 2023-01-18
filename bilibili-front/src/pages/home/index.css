@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.downloadWrap {
+  margin-top: 50px;
+}

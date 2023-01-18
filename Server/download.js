@@ -2,10 +2,10 @@
  * @Author: anjiang
  * @Date: 2023-01-13
  * @LastEditors: anjiang
- * @LastEditTime: 2023-01-16
+ * @LastEditTime: 2023-01-17
  * @Description: s\
  */
-const serveUrl = "http://localhost: 9529";
+const serveUrl = "http://114.115.181.249:9529";
 const axios = require("axios");
 
 const fn = async () => {

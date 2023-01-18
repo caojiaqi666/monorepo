@@ -2,7 +2,7 @@
  * @Author: anjiang
  * @Date: 2023-01-12
  * @LastEditors: anjiang
- * @LastEditTime: 2023-01-13
+ * @LastEditTime: 2023-01-17
  * @Description: 自己实现下载
  */
 const axios = require("axios");
@@ -125,7 +125,7 @@ const downloadResource = async ({ url, folder, title, type }) => {
 	const target = path.join(folder, `${title}.${type}`);
 	if (fs.existsSync(target)) {
 		console.log(`视频 ${title} 已存在`);
-		return Promise.resolve();
+		return Promise.resolve(`${title}.${type}`);
 	}
 	const res = await axios.get(url, {
 		headers: {
@@ -138,7 +138,7 @@ const downloadResource = async ({ url, folder, title, type }) => {
 	const writer = fs.createWriteStream(target);
 	res.data.pipe(writer);
 	return new Promise((resolve, reject) => {
-		writer.on("finish", resolve);
+		writer.on("finish", resolve(`${title}.${type}`));
 		writer.on("error", reject);
 	});
 };
@@ -148,12 +148,14 @@ const downloadByUrl = async (url, type, qn = "1080p+", folder = "") => {
 	const bvid = getBvid(url);
 	const { cidList, title } = await getCidTitleByBvid(bvid);
 	const result = await getDownloadPathById(bvid, type, qn);
-	await downloadResource({
+	const res = await downloadResource({
 		url: result?.[0],
 		folder,
 		title,
 		type,
 	});
+
+	return res;
 };
 
 /** 通过up主页地址下载 */
