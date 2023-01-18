@@ -20,7 +20,7 @@ const CONFIG = {
 //临时处理一下跨域
 app.use(async (ctx, next) => {
 	// Access-Control-Allow-Origin设置为*时cookie不会出现在http的请求头里
-	ctx.set("Access-Control-Allow-Origin", "http://114.115.181.249:9529");
+	ctx.set("Access-Control-Allow-Origin", "http://114.115.181.249:3000");
 	ctx.set(
 		"Access-Control-Allow-Headers",
 		"Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild"
