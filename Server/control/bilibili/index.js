@@ -11,7 +11,7 @@ const download = async (ctx) => {
 		return (ctx.body = {
 			state: "200",
 			msg: "ok",
-			url: encodeURIComponent(`http://localhost:9529/public/${res}`),
+			url: encodeURIComponent(`http://114.115.181.249:9529/public/${res}`),
 		});
 	} catch (err) {
 		console.log("err: ", err);
